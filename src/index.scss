@@ -1,5 +1,7 @@
 @import './style/variables.scss';
 
+@import './style/index.scss';
+
 body {
   margin: 0;
   font-family: sans-serif;
@@ -9,12 +11,10 @@ body {
   margin: 200px;
 }
 
-.primary-button {
-  background-color: $component-primary-background-color;
-  color: $component-primary-text-color;
+* {
+  font-size: 15px;
 }
 
-.secondary-button {
-  background-color: $component-secondary-background-color;
-  color: $component-secondary-text-color;
+.visible {
+  display: initial !important;
 }
