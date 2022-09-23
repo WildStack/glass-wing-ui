@@ -1,0 +1,14 @@
+@import '/src/style/variables.scss';
+
+.elamuk-button {
+  cursor: pointer;
+  border: none;
+  border: 1px solid $component-border-color;
+  padding: 7px 16px;
+  border-radius: $global-border-radius;
+
+  &:focus,
+  &:active {
+    border: 1px solid $component-clicked-border-color;
+  }
+}
