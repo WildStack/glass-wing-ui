@@ -1,14 +1,13 @@
 import type { Component } from 'solid-js';
 import { onCleanup, onMount } from 'solid-js';
 import { createSignal, For } from 'solid-js';
+import { StyleClassEnum } from '../data/style-class.enum';
 import { ArrowDownIcon } from './svg';
-
-type StyleClass = 'primary-dropdown' | 'secondary-dropdown';
 
 interface DropdownProps {
   value: string;
   items: string[];
-  styleClass: StyleClass;
+  styleClass: StyleClassEnum;
   onChange: (item: string) => string;
 }
 
@@ -32,7 +31,7 @@ export const Dropdown: Component<DropdownProps> = props => {
   });
 
   return (
-    <div class={props.styleClass} ref={dropdownRef}>
+    <div class={`dropdown-wrapper ${props.styleClass}`} ref={dropdownRef}>
       <div class={`dropdown ${isOpen() ? 'dropdown-input-border' : ''}`} onClick={() => setIsOpen(!isOpen())}>
         <div>{props.value}</div>
 

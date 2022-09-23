@@ -1,0 +1,73 @@
+@import '/src/style/variables.scss';
+
+.radio-wrapper {
+  /* The container */
+  .radio-container {
+    display: block;
+    position: relative;
+    user-select: none;
+    height: auto;
+    margin-bottom: 10px;
+  }
+
+  /* Hide the browser's default radio button */
+  input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+  }
+
+  /* Create a custom radio button */
+  .radio-checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 20px;
+    width: 20px;
+    background-color: #eee;
+    border-radius: 50%;
+  }
+
+  /* Create the indicator (the dot/circle - hidden when not checked) */
+  .radio-checkmark:after {
+    content: '';
+    position: absolute;
+    display: none;
+  }
+
+  /* Show the indicator (dot/circle) when checked */
+  input:checked ~ .radio-checkmark:after {
+    display: block;
+  }
+
+  /* Style the indicator (dot/circle) */
+  .radio-checkmark:after {
+    top: 6px;
+    left: 6px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: white;
+  }
+
+  .radio-text {
+    color: $component-secondary-text-color;
+    margin-left: 27px;
+  }
+
+  //==================================================
+  //  COLOR DEPENDET
+  //==================================================
+
+  &.primary {
+    input:checked ~ .radio-checkmark {
+      background-color: $primary;
+    }
+  }
+
+  &.secondary {
+    input:checked ~ .radio-checkmark {
+      background-color: $component-secondary-background-color;
+    }
+  }
+}

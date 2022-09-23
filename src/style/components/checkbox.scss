@@ -1,0 +1,80 @@
+.checkbox-wrapper {
+  .checkbox-container {
+    display: block;
+    position: relative;
+    user-select: none;
+    width: 100%;
+
+    /* Create a custom checkbox */
+    .checkbox-checkmark,
+    .unselectable-checkbox-checkmark {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 15px;
+      width: 15px;
+    }
+
+    /* Hide the browser's default checkbox */
+    input {
+      position: absolute;
+      opacity: 0;
+      cursor: pointer;
+      height: 0;
+      width: 0;
+    }
+
+    /* Show the checkbox-checkmark when checked */
+    input:checked ~ .checkbox-checkmark:after {
+      display: block;
+    }
+
+    /* Style the checkbox-checkmark/indicator */
+    .checkbox-checkmark:after {
+      content: '';
+      position: absolute;
+      display: none;
+      left: 4.5px;
+      top: 0.5px;
+
+      width: 5px;
+      height: 10px;
+
+      border: solid white;
+      border-width: 0 2px 2px 0;
+      -webkit-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+      transform: rotate(45deg);
+    }
+
+    .checkbox-text {
+      color: $component-secondary-text-color;
+      margin-left: 27px;
+    }
+  }
+
+  //==================================================
+  //  COLOR DEPENDET
+  //==================================================
+
+  &.primary {
+    .checkbox-checkmark,
+    .unselectable-checkbox-checkmark {
+      background-color: $component-secondary-background-color;
+      border: 2px solid $component-border-color;
+    }
+
+    input:checked ~ .checkbox-checkmark {
+      background-color: $primary;
+      border-color: $primary;
+    }
+  }
+
+  &.secondary {
+    .checkbox-checkmark,
+    .unselectable-checkbox-checkmark {
+      background-color: $component-secondary-background-color;
+      border: 2px solid $component-border-color;
+    }
+  }
+}

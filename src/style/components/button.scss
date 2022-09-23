@@ -1,23 +1,34 @@
 @import '/src/style/variables.scss';
 
-.button {
-  border: none;
-  border: 1px solid $component-border-color;
-  padding: 7px 16px;
-  border-radius: $global-border-radius;
+.button-wrapper {
+  .button {
+    user-select: none;
+    border: none;
+    border: 1px solid $component-border-color;
+    padding: 7px 16px;
+    border-radius: $global-border-radius;
 
-  &:focus,
-  &:active {
-    border: 1px solid $component-clicked-border-color;
+    &:focus,
+    &:active {
+      border: 1px solid $component-clicked-border-color;
+    }
   }
-}
 
-.primary-button {
-  background-color: $component-primary-background-color;
-  color: $component-primary-text-color;
-}
+  //==================================================
+  //  COLOR DEPENDET
+  //==================================================
 
-.secondary-button {
-  background-color: $component-secondary-background-color;
-  color: $component-secondary-text-color;
+  &.primary {
+    .button {
+      background-color: $component-primary-background-color;
+      color: $component-primary-text-color;
+    }
+  }
+
+  &.secondary {
+    .button {
+      background-color: $component-secondary-background-color;
+      color: $component-secondary-text-color;
+    }
+  }
 }

@@ -1,10 +1,9 @@
 import type { Component } from 'solid-js';
-
-type StyleClass = 'primary-button' | 'secondary-button';
+import { StyleClassEnum } from '../data/style-class.enum';
 
 interface ButtonProps {
   value: string;
-  styleClass: StyleClass;
+  styleClass: StyleClassEnum;
   onClick?: () => void;
 }
 
@@ -16,8 +15,10 @@ export const Button: Component<ButtonProps> = props => {
   };
 
   return (
-    <button onClick={() => onClick()} class={`button ${props.styleClass}`}>
-      {props.value}
-    </button>
+    <div class={`button-wrapper ${props.styleClass}`}>
+      <button onClick={() => onClick()} class={`button ${props.styleClass}`}>
+        {props.value}
+      </button>
+    </div>
   );
 };
