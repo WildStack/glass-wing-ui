@@ -25,6 +25,8 @@ import App from './App';
 // Popconfirm
 // Context menu (but not wrapper other)
 
+// add disabled to all component (plus pointer events none)
+// change all click from border change to changing opacity ver slightly like on input with end button
 // Smart Table
 
 render(() => <App />, document.getElementById('root') as HTMLElement);

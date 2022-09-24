@@ -93,6 +93,16 @@ const App: Component = () => {
         <Input value="hahah" styleClass={StyleClassEnum.Primary} />
         <br />
         <Input styleClass={StyleClassEnum.Secondary} onChange={val => console.log(val)} />
+        <br />
+        <Input styleClass={StyleClassEnum.Primary} endButtonIcon={<AiFillShop />} />
+        <br />
+        <Input styleClass={StyleClassEnum.Secondary} endButtonIcon={<AiFillShop />} />
+        <br />
+        <Input styleClass={StyleClassEnum.Secondary} endIcon={<AiFillAlert />} />
+        <br />
+        <Input styleClass={StyleClassEnum.Primary} endButtonText="Primary" />
+        <br />
+        <Input styleClass={StyleClassEnum.Secondary} endButtonText="Search" />
       </div>
       <div style={{ 'margin-left': '30px', width: '250px' }}>
         <AutoComplete

@@ -1,16 +1,54 @@
 @import '/src/style/variables.scss';
 
 .input-wrapper {
+  .input-container {
+    width: fit-content;
+    display: flex;
+  }
+
   .input {
     border: none;
     border: 1px solid $component-border-color;
-    padding: 7px 10px;
+    padding: 7px 24px 7px 10px;
     position: relative;
     user-select: none;
     border-radius: $global-border-radius;
     background-color: $component-secondary-background-color;
     color: $component-secondary-text-color;
     outline: none;
+    border: 1px solid rgba($color: $component-clicked-border-color, $alpha: 0.5);
+  }
+
+  .input-end-container {
+    padding: 7px 10px;
+    border: 1px solid rgba($color: $component-clicked-border-color, $alpha: 0.5);
+    border-width: 1px 1px 1px 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    // for text
+    user-select: none;
+
+    // for icon
+    svg {
+      fill: white;
+    }
+  }
+
+  .input-container-for-icon {
+    position: relative;
+  }
+  .input-container-end-icon-container {
+    position: absolute;
+    right: 5px;
+    top: 50%;
+    transform: translateY(-50%);
+
+    svg {
+      fill: white;
+    }
   }
 
   //==================================================
@@ -22,12 +60,32 @@
     .input:active {
       border: 1px solid $primary;
     }
+    .input-end-container {
+      background-color: $primary;
+      color: white;
+
+      &:focus,
+      &:active {
+        // border: 1px solid white;
+        background-color: rgba($color: $primary, $alpha: 0.9);
+      }
+    }
   }
 
   &.secondary {
     .input:focus,
     .input:active {
       border: 1px solid $component-clicked-border-color;
+    }
+
+    .input-end-container {
+      background-color: $component-secondary-background-color;
+      color: $component-secondary-text-color;
+
+      &:focus,
+      &:active {
+        background-color: rgba($color: $component-secondary-background-color, $alpha: 0.8);
+      }
     }
   }
 }
