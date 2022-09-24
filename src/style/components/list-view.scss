@@ -1,0 +1,38 @@
+@import '/src/style/variables.scss';
+
+.list-view-wrapper {
+  cursor: default;
+
+  .list-view-container {
+    width: 100%;
+    background-color: $component-secondary-background-color;
+  }
+
+  .list-view-list {
+    list-style: none;
+  }
+
+  .list-view-item {
+    user-select: none;
+    color: $component-secondary-text-color;
+    padding: 7px;
+  }
+
+  //==================================================
+  //  COLOR DEPENDET
+  //==================================================
+
+  &.primary {
+    .list-view-item-active {
+      background-color: $primary;
+      color: white;
+    }
+  }
+
+  &.secondary {
+    .list-view-item-active {
+      background-color: $component-clicked-border-color;
+      color: white;
+    }
+  }
+}

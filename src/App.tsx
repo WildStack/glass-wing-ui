@@ -9,6 +9,7 @@ import { Input } from './components/input';
 import { Radio } from './components/radio';
 import { StyleClassEnum } from './data/style-class.enum';
 import { AiFillShop, AiFillAlert } from 'solid-icons/ai';
+import { ListView } from './assets/list-view';
 
 const App: Component = () => {
   const arr = ['hello', 'wassup', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2'];
@@ -112,6 +113,15 @@ const App: Component = () => {
         </IconButton>
         <br />
         <br />
+        <ListView styleClass={StyleClassEnum.Primary} data={arr3} />
+        <br />
+        <ListView
+          styleClass={StyleClassEnum.Secondary}
+          data={arr3}
+          onClick={e => {
+            console.log(e);
+          }}
+        />
       </div>
     </div>
   );
