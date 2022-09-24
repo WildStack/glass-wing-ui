@@ -1,0 +1,42 @@
+@import '/src/style/variables.scss';
+
+.icon-button-wrapper {
+  .icon-button {
+    user-select: none;
+    border: none;
+    border: 1px solid $component-border-color;
+    padding: 7px;
+    border-radius: $global-border-radius;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &:focus,
+    &:active {
+      border: 1px solid $component-clicked-border-color;
+    }
+
+    svg {
+      fill: $component-primary-text-color;
+    }
+  }
+
+  //==================================================
+  //  COLOR DEPENDET
+  //==================================================
+
+  &.primary {
+    .icon-button {
+      background-color: $component-primary-background-color;
+      color: $component-primary-text-color;
+    }
+  }
+
+  &.secondary {
+    .icon-button {
+      background-color: $component-secondary-background-color;
+      color: $component-secondary-text-color;
+    }
+  }
+}

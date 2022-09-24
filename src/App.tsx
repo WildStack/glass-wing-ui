@@ -4,9 +4,11 @@ import { AutoComplete } from './components/auto-complete';
 import { Button } from './components/button';
 import { Checkbox } from './components/checkbox';
 import { Dropdown } from './components/dropdown';
+import { IconButton } from './components/icon-button';
 import { Input } from './components/input';
 import { Radio } from './components/radio';
 import { StyleClassEnum } from './data/style-class.enum';
+import { AiFillShop, AiFillAlert } from 'solid-icons/ai';
 
 const App: Component = () => {
   const arr = ['hello', 'wassup', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2'];
@@ -99,6 +101,17 @@ const App: Component = () => {
           onChange={item => setAutoCompleteValue(item)}
           styleClass={StyleClassEnum.Primary}
         />
+        <br />
+        <br />
+        <IconButton styleClass={StyleClassEnum.Primary}>
+          <AiFillShop />
+        </IconButton>
+        <br />
+        <IconButton styleClass={StyleClassEnum.Secondary}>
+          <AiFillAlert />
+        </IconButton>
+        <br />
+        <br />
       </div>
     </div>
   );

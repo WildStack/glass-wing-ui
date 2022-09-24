@@ -5,7 +5,6 @@ import './index.scss';
 import App from './App';
 
 //TODO
-// Autocomplete
 // IconButton
 // Listview
 // All type of input

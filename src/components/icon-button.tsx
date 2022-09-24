@@ -1,13 +1,13 @@
-import type { Component } from 'solid-js';
+import type { Component, JSX } from 'solid-js';
 import { StyleClassEnum } from '../data/style-class.enum';
 
-interface ButtonProps {
-  value: string;
+interface IconButtonProps {
   styleClass: StyleClassEnum;
   onClick?: () => void;
+  children: JSX.Element;
 }
 
-export const Button: Component<ButtonProps> = props => {
+export const IconButton: Component<IconButtonProps> = props => {
   const onClick = () => {
     if (props.onClick) {
       props.onClick();
@@ -16,8 +16,8 @@ export const Button: Component<ButtonProps> = props => {
 
   return (
     <div class={`icon-button-wrapper ${props.styleClass}`}>
-      <button onClick={() => onClick()} class={`icon-button ${props.styleClass}`}>
-        {props.value}
+      <button onClick={() => onClick()} class="icon-button">
+        {props.children}
       </button>
     </div>
   );
