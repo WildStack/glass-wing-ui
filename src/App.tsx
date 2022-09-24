@@ -10,6 +10,7 @@ import { Radio } from './components/radio';
 import { StyleClassEnum } from './data/style-class.enum';
 import { AiFillShop, AiFillAlert } from 'solid-icons/ai';
 import { ListView } from './assets/list-view';
+import { TextArea } from './components/text-area';
 
 const App: Component = () => {
   const arr = ['hello', 'wassup', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2'];
@@ -90,7 +91,7 @@ const App: Component = () => {
           styleClass={StyleClassEnum.Secondary}
         />
       </div>
-      <div>
+      <div style={{ 'margin-left': '50px' }}>
         <Input value="hahah" styleClass={StyleClassEnum.Primary} />
         <br />
         <Input styleClass={StyleClassEnum.Secondary} onChange={val => console.log(val)} />
@@ -122,6 +123,11 @@ const App: Component = () => {
             console.log(e);
           }}
         />
+      </div>
+      <div style={{ 'margin-left': '50px', width: '300px' }}>
+        <TextArea styleClass={StyleClassEnum.Primary} row={8} />
+        <br />
+        <TextArea styleClass={StyleClassEnum.Secondary} row={5} value="Hello this is text" />
       </div>
     </div>
   );

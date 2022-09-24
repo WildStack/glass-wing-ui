@@ -5,6 +5,7 @@ interface InputProps {
   value?: string;
   styleClass: StyleClassEnum;
   onChange?: (item: string) => void;
+  placeHolder?: string;
 }
 
 export const Input: Component<InputProps> = props => {
@@ -16,7 +17,13 @@ export const Input: Component<InputProps> = props => {
 
   return (
     <div class={`input-wrapper ${props.styleClass}`}>
-      <input class="input" value={props.value ?? ''} type="text" onInput={e => onInput(e.currentTarget.value)} />
+      <input
+        placeholder={props.placeHolder ?? 'Text here'}
+        class="input"
+        value={props.value ?? ''}
+        type="text"
+        onInput={e => onInput(e.currentTarget.value)}
+      />
     </div>
   );
 };

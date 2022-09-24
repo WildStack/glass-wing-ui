@@ -1,0 +1,34 @@
+@import '/src/style/variables.scss';
+
+.text-area-wrapper {
+  .text-area {
+    border: none;
+    border: 1px solid $component-border-color;
+    padding: 0;
+    padding: 7px;
+    position: relative;
+    border-radius: $global-border-radius;
+    background-color: $component-secondary-background-color;
+    color: $component-secondary-text-color;
+    outline: none;
+    width: 100%;
+  }
+
+  //==================================================
+  //  COLOR DEPENDET
+  //==================================================
+
+  &.primary {
+    .text-area:focus,
+    .text-area:active {
+      border: 1px solid $primary;
+    }
+  }
+
+  &.secondary {
+    .text-area:focus,
+    .text-area:active {
+      border: 1px solid $component-border-color;
+    }
+  }
+}
