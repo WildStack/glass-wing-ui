@@ -18,10 +18,14 @@ export const TextArea: Component<TextAreaProps> = props => {
 
   return (
     <div class={`text-area-wrapper ${props.styleClass}`}>
-      <textarea class="text-area" placeholder={props.placeHolder ?? 'Text here'} rows={props.row}>
+      <textarea
+        class="text-area"
+        onInput={e => onInput(e.currentTarget.value)}
+        placeholder={props.placeHolder ?? 'Text here'}
+        rows={props.row}
+      >
         {props.value}
       </textarea>
-      {/* <input class="input" value={props.value ?? ''} type="text" onInput={e => onInput(e.currentTarget.value)} /> */}
     </div>
   );
 };

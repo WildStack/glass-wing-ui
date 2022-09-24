@@ -5,7 +5,6 @@ import './index.scss';
 import App from './App';
 
 //TODO
-// Textarea
 // All type of input
 // Breadcrumb
 // DatePicker
