@@ -11,6 +11,44 @@ import { StyleClassEnum } from './data/style-class.enum';
 import { AiFillShop, AiFillAlert } from 'solid-icons/ai';
 import { ListView } from './assets/list-view';
 import { TextArea } from './components/text-area';
+import { Tree } from './components/tree';
+
+const data = {
+  value: 'node1',
+  children: [
+    {
+      value: 'node2',
+      children: [
+        {
+          value: 'node2-1',
+          children: [
+            {
+              value: 'node2-1-1',
+              children: [],
+            },
+          ],
+        },
+        {
+          value: 'node2-2',
+          children: [
+            {
+              value: 'node2-2-1',
+              children: [],
+            },
+          ],
+        },
+        {
+          value: 'node2-3',
+          children: [],
+        },
+      ],
+    },
+    {
+      value: 'node3',
+      children: [],
+    },
+  ],
+};
 
 const App: Component = () => {
   const arr = ['hello', 'wassup', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2'];
@@ -136,6 +174,8 @@ const App: Component = () => {
         <TextArea styleClass={StyleClassEnum.Primary} row={8} />
         <br />
         <TextArea styleClass={StyleClassEnum.Secondary} row={5} value="Hello this is text" />
+        <br />
+        <Tree data={data} />
       </div>
     </div>
   );

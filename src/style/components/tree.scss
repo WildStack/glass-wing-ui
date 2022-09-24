@@ -1,0 +1,37 @@
+@import '/src/style/variables.scss';
+
+.tree-wrapper {
+  background-color: $component-secondary-background-color;
+  color: $component-secondary-text-color;
+
+  .tree-node {
+    user-select: none;
+
+    .tree-node-label {
+      .toggle {
+        cursor: pointer;
+        display: inline-block;
+        transition: all 0.3s;
+        &:hover {
+          color: #888;
+        }
+        &.collasped {
+          transform: rotate(-90deg);
+        }
+      }
+    }
+
+    .tree-node-children {
+      transition: all 0.2s;
+      overflow: hidden;
+      transform: translateY(0);
+      opacity: 1;
+
+      &.collapsed {
+        opacity: 0;
+        display: none;
+        transform: translateY(-100%) scale(0);
+      }
+    }
+  }
+}
