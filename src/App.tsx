@@ -36,7 +36,7 @@ const App: Component = () => {
 
   return (
     <div style={{ display: 'flex' }}>
-      <div>
+      <div style={{ width: '250px' }}>
         <Button value="Ok" styleClass={StyleClassEnum.Primary} />
         <br />
         <Button
@@ -47,21 +47,19 @@ const App: Component = () => {
         <br />
         <br />
         <br />
-        <div style={{ width: '200px' }}>
-          <Dropdown
-            value={dropdownValue()}
-            items={arr}
-            onChange={item => setDropdownValue(item)}
-            styleClass={StyleClassEnum.Primary}
-          />
-          <br />
-          <Dropdown
-            value={dropdownValue()}
-            items={arr2}
-            onChange={item => setDropdownValue(item)}
-            styleClass={StyleClassEnum.Secondary}
-          />
-        </div>
+        <Dropdown
+          value={dropdownValue()}
+          items={arr}
+          onChange={item => setDropdownValue(item)}
+          styleClass={StyleClassEnum.Primary}
+        />
+        <br />
+        <Dropdown
+          value={dropdownValue()}
+          items={arr2}
+          onChange={item => setDropdownValue(item)}
+          styleClass={StyleClassEnum.Secondary}
+        />
         <br />
         <br />
         <br />
@@ -90,13 +88,13 @@ const App: Component = () => {
           onChange={itemVal => setRadio2(itemVal)}
           styleClass={StyleClassEnum.Secondary}
         />
-      </div>
-      <div style={{ 'margin-left': '50px' }}>
+        <br />
+        <br />
         <Input value="hahah" styleClass={StyleClassEnum.Primary} />
         <br />
         <Input styleClass={StyleClassEnum.Secondary} onChange={val => console.log(val)} />
-        <br />
-        <br />
+      </div>
+      <div style={{ 'margin-left': '30px', width: '250px' }}>
         <AutoComplete
           value={autoCompleteValue()}
           items={arr3}
@@ -124,7 +122,7 @@ const App: Component = () => {
           }}
         />
       </div>
-      <div style={{ 'margin-left': '50px', width: '300px' }}>
+      <div style={{ 'margin-left': '30px', width: '300px' }}>
         <TextArea styleClass={StyleClassEnum.Primary} row={8} />
         <br />
         <TextArea styleClass={StyleClassEnum.Secondary} row={5} value="Hello this is text" />
