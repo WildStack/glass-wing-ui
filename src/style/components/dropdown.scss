@@ -20,13 +20,16 @@
     margin-top: 4px;
     background-color: $component-secondary-background-color;
     width: 100%;
-    box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
+    box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.9);
     z-index: 10;
+    max-height: 330px;
+    overflow: overlay;
   }
 
   .dropdown-item {
     height: auto;
     padding: 7px 10px;
+    overflow: auto;
 
     &:hover {
       background-color: $primary;

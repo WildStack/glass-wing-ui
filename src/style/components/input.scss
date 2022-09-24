@@ -1,0 +1,33 @@
+@import '/src/style/variables.scss';
+
+.input-wrapper {
+  .input {
+    border: none;
+    border: 1px solid $component-border-color;
+    padding: 7px 10px;
+    position: relative;
+    user-select: none;
+    border-radius: $global-border-radius;
+    background-color: $component-secondary-background-color;
+    color: $component-secondary-text-color;
+    outline: none;
+  }
+
+  //==================================================
+  //  COLOR DEPENDET
+  //==================================================
+
+  &.primary {
+    .input:focus,
+    .input:active {
+      border: 1px solid $primary;
+    }
+  }
+
+  &.secondary {
+    .input:focus,
+    .input:active {
+      border: 1px solid $component-clicked-border-color;
+    }
+  }
+}

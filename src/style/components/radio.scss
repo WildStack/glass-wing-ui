@@ -24,8 +24,9 @@
     left: 0;
     height: 20px;
     width: 20px;
-    background-color: #eee;
+    background-color: $component-secondary-background-color;
     border-radius: 50%;
+    border: 2px solid $component-border-color;
   }
 
   /* Create the indicator (the dot/circle - hidden when not checked) */
@@ -47,7 +48,7 @@
     width: 8px;
     height: 8px;
     border-radius: 50%;
-    background: white;
+    background: $component-secondary-text-color;
   }
 
   .radio-text {
@@ -62,6 +63,10 @@
   &.primary {
     input:checked ~ .radio-checkmark {
       background-color: $primary;
+    }
+
+    .radio-checkmark:after {
+      background: white;
     }
   }
 

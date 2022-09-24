@@ -12,12 +12,6 @@ export const Radio: Component<RadioProps> = props => {
   return (
     <form>
       <div class={`radio-wrapper ${props.styleClass}`}>
-        {/* <label class="container" style={{ 'margin-right': '100px' }}>
-        {props.labelText ? <div class="checkbox-text">{props?.labelText}</div> : null}
-        <input type="checkbox" checked={props.isChecked} onChange={() => props.onChange(!props.isChecked)} />
-        {props.isChecked ? <span class="checkmark" /> : <span class="unselectable-checkmark" />}
-      </label> */}
-
         <For each={props.items}>
           {item => (
             <label class="radio-container">
@@ -32,17 +26,6 @@ export const Radio: Component<RadioProps> = props => {
             </label>
           )}
         </For>
-
-        {/* <label class="radio-container">
-        <input type="radio" checked={true} name="radio" />
-        <span class="radio-checkmark" />
-        One
-      </label> */}
-        {/* <label class="radio-container">
-        <input type="radio" checked={true} name="radio" />
-        <span class="radio-checkmark" />
-        Two
-      </label> */}
       </div>
     </form>
   );

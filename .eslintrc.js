@@ -30,6 +30,8 @@ module.exports = {
     "solid/no-destructure": "warn",
     "solid/jsx-no-undef": "error",
     "import/no-unresolved": "off",
-    "import/named": "warn"
+    "import/named": "warn",
+    "@typescript-eslint/no-explicit-any":"off",
+    "@typescript-eslint/ban-ts-comment":"off"
   }
 };

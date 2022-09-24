@@ -1,0 +1,10 @@
+@import '/src/style/variables.scss';
+
+::-webkit-scrollbar {
+  width: 7px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgba($color: $component-secondary-text-color, $alpha: 0.5);
+  border-radius: 1px;
+}
