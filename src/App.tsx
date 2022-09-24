@@ -1,5 +1,6 @@
 import type { Component } from 'solid-js';
 import { createSignal } from 'solid-js';
+import { AutoComplete } from './components/auto-complete';
 import { Button } from './components/button';
 import { Checkbox } from './components/checkbox';
 import { Dropdown } from './components/dropdown';
@@ -10,7 +11,16 @@ import { StyleClassEnum } from './data/style-class.enum';
 const App: Component = () => {
   const arr = ['hello', 'wassup', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2'];
   const arr2 = ['hello', 'wassup', '2'];
+  const arr3 = [
+    { label: 'abb', value: 123 },
+    { label: 'bbbb', value: '123' },
+    { label: 'aaaaa', value: '123' },
+    { label: 'aaaaa', value: '123' },
+    { label: 'ss', value: [] },
+  ];
+
   const [dropdownValue, setDropdownValue] = createSignal(arr[0]);
+  const [autoCompleteValue, setAutoCompleteValue] = createSignal(arr3[0]);
   const [isChecked, setIsChecked] = createSignal(false);
 
   const radioItems1 = [
@@ -81,6 +91,14 @@ const App: Component = () => {
         <Input value="hahah" styleClass={StyleClassEnum.Primary} />
         <br />
         <Input styleClass={StyleClassEnum.Secondary} onChange={val => console.log(val)} />
+        <br />
+        <br />
+        <AutoComplete
+          value={autoCompleteValue()}
+          items={arr3}
+          onChange={item => setAutoCompleteValue(item)}
+          styleClass={StyleClassEnum.Primary}
+        />
       </div>
     </div>
   );
