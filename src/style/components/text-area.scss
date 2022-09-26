@@ -10,8 +10,10 @@
     border-radius: $global-border-radius;
     background-color: $component-secondary-background-color;
     color: $component-secondary-text-color;
-    outline: none;
     width: 100%;
+    resize: none;
+    overflow: overlay;
+    outline: none;
   }
 
   //==================================================

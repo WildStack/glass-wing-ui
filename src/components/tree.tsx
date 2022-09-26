@@ -1,28 +1,55 @@
-import { Component, createSignal } from 'solid-js';
+import type { Component } from 'solid-js';
+import { createSignal, For, Show } from 'solid-js';
+import { StyleClassEnum } from '../data/style-class.enum';
+import { Triangulum } from './svg';
 
-export const Tree: Component<{ data: any; level?: number }> = props => {
+interface TreeItem {
+  label: string;
+  children?: Array<TreeItem>;
+}
+
+interface TreeProps {
+  data: TreeProps | TreeItem;
+  level?: number;
+  value?: string;
+  styleClass: StyleClassEnum;
+  onClick?: () => void;
+}
+
+export const Tree: Component<TreeProps> = props => {
   const [collapse, setCollapse] = createSignal(false);
+  const level = () => props.level || 0;
 
-  const { data } = props;
-  // const { collapse } = this.state;
-  // const level = props.level || 0;
-  let ChildrenNodes = [];
-
-  if (data.children) {
-    ChildrenNodes = data.children.map((d: any) => <Tree data={d} level={(props.level || 0) + 1} />);
-  }
+  const onToggleClick = () => {
+    if ((props.data as TreeItem)?.children?.length) {
+      setCollapse(!collapse());
+    }
+  };
 
   return (
-    <div class="tree-wrapper">
-      <div class="tree-node" style={{ 'padding-left': `${(props.level || 0) * 10}px` }}>
-        <div class="tree-node-label">
-          <span class={collapse() ? 'toggle collasped' : 'toggle'} onClick={() => setCollapse(!collapse())}>
-            ▼
-          </span>
+    <div class={`tree-wrapper ${props.styleClass}`}>
+      <div class="tree-node">
+        <div class="tree-node-label-container">
+          <div
+            class="tree-node-label"
+            style={{ 'padding-left': `${level() * 17 + 10}px` }}
+            onClick={() => onToggleClick()}
+          >
+            <Show when={(props.data as TreeItem)?.children?.length}>
+              <Triangulum svgClass={`tree-toggle-icon ${collapse() ? 'toggle collapsed' : 'toggle'}`} />
+            </Show>
 
-          {data.value}
+            <div class="tree-node-text">{(props.data as TreeItem).label}</div>
+          </div>
         </div>
-        <div class={'tree-node-children' + (collapse() ? ' collapsed' : '')}>{ChildrenNodes}</div>
+
+        <div class={'tree-node-children' + (collapse() ? ' collapsed' : '')}>
+          <Show when={(props.data as TreeItem)?.children?.length}>
+            <For each={(props.data as TreeItem).children}>
+              {item => <Tree styleClass={props.styleClass} data={item} level={level() + 1} />}
+            </For>
+          </Show>
+        </div>
       </div>
     </div>
   );

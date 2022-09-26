@@ -9,43 +9,39 @@ import { Input } from './components/input';
 import { Radio } from './components/radio';
 import { StyleClassEnum } from './data/style-class.enum';
 import { AiFillShop, AiFillAlert } from 'solid-icons/ai';
-import { ListView } from './assets/list-view';
+import { ListView } from './components/list-view';
 import { TextArea } from './components/text-area';
 import { Tree } from './components/tree';
 
 const data = {
-  value: 'node1',
+  label: 'node1',
   children: [
     {
-      value: 'node2',
+      label: 'node2',
       children: [
         {
-          value: 'node2-1',
+          label: 'node2-1',
           children: [
             {
-              value: 'node2-1-1',
-              children: [],
+              label: 'node2-1-1',
             },
           ],
         },
         {
-          value: 'node2-2',
+          label: 'node2-2',
           children: [
             {
-              value: 'node2-2-1',
-              children: [],
+              label: 'node2-2-1',
             },
           ],
         },
         {
-          value: 'node2-3',
-          children: [],
+          label: 'node2-3',
         },
       ],
     },
     {
-      value: 'node3',
-      children: [],
+      label: 'node3',
     },
   ],
 };
@@ -175,7 +171,9 @@ const App: Component = () => {
         <br />
         <TextArea styleClass={StyleClassEnum.Secondary} row={5} value="Hello this is text" />
         <br />
-        <Tree data={data} />
+        <Tree data={data} styleClass={StyleClassEnum.Primary} />
+        <br />
+        <Tree data={data} styleClass={StyleClassEnum.Secondary} />
       </div>
     </div>
   );
