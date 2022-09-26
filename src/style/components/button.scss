@@ -7,11 +7,7 @@
     border: 1px solid $component-border-color;
     padding: 7px 16px;
     border-radius: $global-border-radius;
-
-    &:focus,
-    &:active {
-      border: 1px solid $component-clicked-border-color;
-    }
+    outline: none;
   }
 
   //==================================================
@@ -20,8 +16,12 @@
 
   &.primary {
     .button {
-      background-color: $component-primary-background-color;
+      background-color: $primary;
       color: $component-primary-text-color;
+
+      &:active {
+        background-color: rgba($color: $primary, $alpha: 0.7);
+      }
     }
   }
 
@@ -29,6 +29,10 @@
     .button {
       background-color: $component-secondary-background-color;
       color: $component-secondary-text-color;
+
+      &:active {
+        background-color: rgba($color: $component-secondary-background-color, $alpha: 0.7);
+      }
     }
   }
 }

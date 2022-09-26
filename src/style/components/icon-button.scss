@@ -12,11 +12,6 @@
     align-items: center;
     justify-content: center;
 
-    &:focus,
-    &:active {
-      border: 1px solid $component-clicked-border-color;
-    }
-
     svg {
       fill: $component-primary-text-color;
     }
@@ -28,8 +23,12 @@
 
   &.primary {
     .icon-button {
-      background-color: $component-primary-background-color;
+      background-color: $primary;
       color: $component-primary-text-color;
+
+      &:active {
+        background-color: rgba($color: $primary, $alpha: 0.7);
+      }
     }
   }
 
@@ -37,6 +36,10 @@
     .icon-button {
       background-color: $component-secondary-background-color;
       color: $component-secondary-text-color;
+
+      &:active {
+        background-color: rgba($color: $component-secondary-background-color, $alpha: 0.7);
+      }
     }
   }
 }

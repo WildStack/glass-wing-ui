@@ -15,8 +15,8 @@ export const Button: Component<ButtonProps> = props => {
   };
 
   return (
-    <div class={`icon-button-wrapper ${props.styleClass}`}>
-      <button onClick={() => onClick()} class={`icon-button ${props.styleClass}`}>
+    <div class={`button-wrapper ${props.styleClass}`}>
+      <button onClick={() => onClick()} class="button">
         {props.value}
       </button>
     </div>
