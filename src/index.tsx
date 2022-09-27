@@ -6,9 +6,6 @@ import App from './App';
 
 //TODO
 //========== Chalanging
-// Popover
-// Notification
-// Modal
 // Tabs
 // Popconfirm
 // Context menu (but not wrapper other)
@@ -20,7 +17,11 @@ import App from './App';
 // Rate
 // Progress/Spin
 
+// Notification
+// Modal
+
 // add disabled to all component (plus pointer events none)
+// autocomplete has some problems
 
 // Hard
 // Smart Table

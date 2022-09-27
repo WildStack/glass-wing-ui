@@ -12,6 +12,7 @@ import { AiFillShop, AiFillAlert } from 'solid-icons/ai';
 import { ListView } from './components/list-view';
 import { TextArea } from './components/text-area';
 import { Tree } from './components/tree';
+import { Popover } from './components/popover';
 
 const data = {
   label: 'node1',
@@ -45,6 +46,9 @@ const data = {
     },
   ],
 };
+
+const bigLoremText =
+  "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.";
 
 const App: Component = () => {
   const arr = ['hello', 'wassup', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2'];
@@ -174,6 +178,15 @@ const App: Component = () => {
         <Tree data={data} styleClass={StyleClassEnum.Primary} />
         <br />
         <Tree data={data} styleClass={StyleClassEnum.Secondary} />
+      </div>
+      <div style={{ 'margin-left': '30px', width: '300px' }}>
+        <Popover text="Hello">
+          <Button value="Popover text example" styleClass={StyleClassEnum.Primary} />
+        </Popover>
+        <br />
+        <Popover text={bigLoremText}>
+          <Button value="Popover big text example" styleClass={StyleClassEnum.Primary} />
+        </Popover>
       </div>
     </div>
   );
