@@ -6,7 +6,6 @@ import App from './App';
 
 //TODO
 //========== Chalanging
-// Tabs
 // Popconfirm
 // Context menu (but not wrapper other)
 // Breadcrumb
@@ -22,6 +21,7 @@ import App from './App';
 
 // add disabled to all component (plus pointer events none)
 // autocomplete has some problems
+// tab needs mode functionality (remove, color change)
 
 // Hard
 // Smart Table

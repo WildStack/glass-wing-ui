@@ -13,6 +13,7 @@ import { ListView } from './components/list-view';
 import { TextArea } from './components/text-area';
 import { Tree } from './components/tree';
 import { Popover } from './components/popover';
+import { Tabs } from './components/tab';
 
 const data = {
   label: 'node1',
@@ -187,6 +188,26 @@ const App: Component = () => {
         <Popover text={bigLoremText}>
           <Button value="Popover big text example" styleClass={StyleClassEnum.Primary} />
         </Popover>
+
+        <br />
+        <br />
+        <Tabs
+          styleClass={StyleClassEnum.Primary}
+          tabs={[
+            { id: 1, label: 'Tab 1' },
+            { id: 2, label: 'Tab 2' },
+            { id: 3, label: 'Tab 3' },
+          ]}
+        />
+        <br />
+        <Tabs
+          styleClass={StyleClassEnum.Secondary}
+          tabs={[
+            { id: 1, label: 'Tab 1' },
+            { id: 2, label: 'Tab 2' },
+            { id: 3, label: 'Tab 3' },
+          ]}
+        />
       </div>
     </div>
   );
