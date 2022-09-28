@@ -14,6 +14,7 @@ import { TextArea } from './components/text-area';
 import { Tree } from './components/tree';
 import { Popover } from './components/popover';
 import { Tabs } from './components/tab';
+import { Breadcrumb } from './components/breadcrumb';
 
 const data = {
   label: 'node1',
@@ -188,7 +189,6 @@ const App: Component = () => {
         <Popover text={bigLoremText}>
           <Button value="Popover big text example" styleClass={StyleClassEnum.Primary} />
         </Popover>
-
         <br />
         <br />
         <Tabs
@@ -206,6 +206,25 @@ const App: Component = () => {
             { id: 1, label: 'Tab 1' },
             { id: 2, label: 'Tab 2' },
             { id: 3, label: 'Tab 3' },
+          ]}
+        />
+        <br />
+        <br />
+        <Breadcrumb
+          styleClass={StyleClassEnum.Primary}
+          items={[
+            { label: 'Tab 1', link: 'aa' },
+            { label: 'Sub Tab', link: 'aa' },
+            { label: 'Sub Tab 2', link: 'aa' },
+          ]}
+        />
+        <br />
+        <Breadcrumb
+          styleClass={StyleClassEnum.Secondary}
+          items={[
+            { label: 'Tab 1', link: 'aa' },
+            { label: 'Sub Tab', link: 'aa' },
+            { label: 'Sub Tab 2', link: 'aa' },
           ]}
         />
       </div>

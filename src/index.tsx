@@ -6,8 +6,6 @@ import App from './App';
 
 //TODO
 //========== Chalanging
-// Popconfirm
-// Context menu (but not wrapper other)
 // Breadcrumb
 // DatePicker
 // ColorPicker
@@ -15,6 +13,8 @@ import App from './App';
 // Avatar
 // Rate
 // Progress/Spin
+// Popconfirm
+// Context menu (but not wrapper other)
 
 // Notification
 // Modal

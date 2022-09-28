@@ -1,0 +1,48 @@
+@import '/src/style/variables.scss';
+
+.breadcrumb-wrapper {
+  .breadcrumb {
+    background-color: $component-secondary-background-color;
+    padding: 7px;
+    display: flex;
+  }
+
+  .breadcrumb-item {
+    * {
+      user-select: none;
+      outline: none;
+      cursor: default;
+    }
+
+    .breadcrumb-text {
+      color: $component-secondary-text-color;
+      text-decoration: none;
+    }
+
+    .breadcrumb-separator {
+      color: $component-primary-text-color;
+      padding: 0 9px;
+      font-weight: bold;
+    }
+  }
+
+  //==================================================
+  //  COLOR DEPENDET
+  //==================================================
+
+  &.primary {
+    .breadcrumb-text {
+      &:hover {
+        color: $primary;
+      }
+    }
+  }
+
+  &.secondary {
+    .breadcrumb-text {
+      &:hover {
+        color: white;
+      }
+    }
+  }
+}
