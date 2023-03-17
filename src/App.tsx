@@ -178,7 +178,6 @@ const App: Component = () => {
           <AiFillAlert />
         </IconButton>
         <br />
-        <br />
         <ListView styleClass={StyleClassEnum.Primary} data={arr3} />
         <br />
         <ListView
@@ -207,7 +206,6 @@ const App: Component = () => {
           <Button value="Popover big text example" styleClass={StyleClassEnum.Primary} />
         </Popover>
         <br />
-        <br />
         <Tabs
           styleClass={StyleClassEnum.Primary}
           tabs={[
@@ -225,7 +223,6 @@ const App: Component = () => {
             { id: 3, label: 'Tab 3' },
           ]}
         />
-        <br />
         <br />
         <Breadcrumb
           styleClass={StyleClassEnum.Primary}
@@ -245,23 +242,18 @@ const App: Component = () => {
           ]}
         />
         <br />
-        <br />
-        <br />
-        <ColorPicker styleClass={StyleClassEnum.Primary} value={colorPicker()} onChange={e => setColorPicker(e)} />
-        <ColorPicker styleClass={StyleClassEnum.Primary} value={colorPicker2()} onChange={e => setColorPicker2(e)} />
-        <br />
+        <div style={{ display: 'flex' }}>
+          <ColorPicker styleClass={StyleClassEnum.Primary} value={colorPicker()} onChange={e => setColorPicker(e)} />
+          <ColorPicker styleClass={StyleClassEnum.Primary} value={colorPicker2()} onChange={e => setColorPicker2(e)} />
+        </div>
         <br />
         <Slider value={slider()} onChange={e => setSlider(e)} styleClass={StyleClassEnum.Primary} />
         <div style={{ color: 'white' }}>{JSON.stringify(slider())}</div>
         <br />
-        <br />
         <Rate value={rate()} onChange={e => setRate(e)} />
         <div style={{ color: 'white' }}>{JSON.stringify(rate())}</div>
         <br />
-        <br />
-        <br />
         <Progress value={30} />
-        <br />
         <br />
         <div style={{ display: 'flex' }}>
           <Loader isLoading={true} size={110} borderWidth={30} />
