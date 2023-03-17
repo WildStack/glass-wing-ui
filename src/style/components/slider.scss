@@ -1,0 +1,23 @@
+@import '/src/style/variables.scss';
+
+.slider-wrapper {
+  .slider {
+    appearance: none;
+    width: 100%;
+    height: 5px;
+    border-radius: $global-border-radius;
+    background: $component-clicked-border-color;
+    outline: none;
+    cursor: pointer;
+  }
+
+  .slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: $primary;
+    cursor: pointer;
+  }
+}

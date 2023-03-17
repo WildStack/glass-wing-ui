@@ -16,6 +16,7 @@ import { Popover } from './components/popover';
 import { Tabs } from './components/tab';
 import { Breadcrumb } from './components/breadcrumb';
 import { ColorPicker, ColorValue } from './components/color-picker';
+import { Slider } from './components/slider';
 
 const data = {
   label: 'node1',
@@ -84,6 +85,7 @@ const App: Component = () => {
     rgba: '',
     type: 'RGBA',
   });
+  const [slider, setSlider] = createSignal(0);
 
   return (
     <div style={{ display: 'flex' }}>
@@ -243,6 +245,12 @@ const App: Component = () => {
         <br />
         <ColorPicker styleClass={StyleClassEnum.Primary} value={colorPicker()} onChange={e => setColorPicker(e)} />
         <ColorPicker styleClass={StyleClassEnum.Primary} value={colorPicker2()} onChange={e => setColorPicker2(e)} />
+        <br />
+        <br />
+        <Slider value={slider()} onChange={e => setSlider(e)} styleClass={StyleClassEnum.Primary} />
+        <div style={{ color: 'white' }}>{JSON.stringify(slider())}</div>
+        <br />
+        <br />
       </div>
     </div>
   );
