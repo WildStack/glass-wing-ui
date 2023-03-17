@@ -18,6 +18,8 @@ import { Breadcrumb } from './components/breadcrumb';
 import { ColorPicker, ColorValue } from './components/color-picker';
 import { Slider } from './components/slider';
 import { EmojiValue, Rate } from './components/rate';
+import { Progress } from './components/progress';
+import { Loader } from './components/loader';
 
 const data = {
   label: 'node1',
@@ -255,6 +257,16 @@ const App: Component = () => {
         <br />
         <Rate value={rate()} onChange={e => setRate(e)} />
         <div style={{ color: 'white' }}>{JSON.stringify(rate())}</div>
+        <br />
+        <br />
+        <br />
+        <Progress value={30} />
+        <br />
+        <br />
+        <div style={{ display: 'flex' }}>
+          <Loader isLoading={true} size={110} borderWidth={30} />
+          <Loader isLoading={false} />
+        </div>
       </div>
     </div>
   );

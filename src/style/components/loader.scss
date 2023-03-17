@@ -1,0 +1,39 @@
+@import '/src/style/variables.scss';
+
+/* Safari */
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.loader-wrapper {
+  .loader {
+    border: solid rgb($color: $component-primary-text-color, $alpha: 0.85);
+    border-radius: 50%;
+    border-top: solid $primary;
+    border-width: 7px;
+    width: 70px;
+    height: 70px;
+  }
+
+  .loader-start {
+    animation: spin 2s linear infinite;
+  }
+
+  .loader-stop {
+    animation: none;
+  }
+}

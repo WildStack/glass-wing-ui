@@ -1,0 +1,32 @@
+@import '/src/style/variables.scss';
+
+.progress-wrapper {
+  .progress {
+    border: 1px solid rgb($color: $component-primary-text-color, $alpha: 0.6);
+    height: 24px;
+    border-radius: $global-border-radius;
+    background-color: $component-secondary-background-color;
+    color: $component-primary-text-color;
+    user-select: none;
+    outline: none;
+
+    position: relative;
+  }
+
+  .progress-text {
+    position: absolute;
+    left: 5px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: white;
+  }
+
+  .progress-moving {
+    height: 100%;
+    background-color: $primary;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+  }
+}

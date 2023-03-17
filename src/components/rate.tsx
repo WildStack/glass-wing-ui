@@ -1,9 +1,5 @@
-import { Component, createSignal, For } from 'solid-js';
-import { StyleClassEnum } from '../data/style-class.enum';
+import { Component, For } from 'solid-js';
 
-// import x from '@/'
-// import x from 'src/'
-// import x from 'src/'
 import emojiRatingVeryBad from 'src/assets/svg/review_emoji/emoji_rating_very_bad.svg';
 import emojiRatingBad from 'src/assets/svg/review_emoji/emoji_rating_bad.svg';
 import emojiRatingNormal from 'src/assets/svg/review_emoji/emoji_rating_normal.svg';

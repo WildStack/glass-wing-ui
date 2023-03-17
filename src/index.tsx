@@ -9,8 +9,7 @@ import App from './App';
 //========== Easy
 // DatePicker https://flatpickr.js.org/examples/
 // Avatar
-// Rate
-// Progress/Spin
+// Spin
 //===== Chalanging
 // Popconfirm
 // Context menu (but not wrapper other)
