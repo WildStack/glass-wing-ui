@@ -17,6 +17,7 @@ import { Tabs } from './components/tab';
 import { Breadcrumb } from './components/breadcrumb';
 import { ColorPicker, ColorValue } from './components/color-picker';
 import { Slider } from './components/slider';
+import { EmojiValue, Rate } from './components/rate';
 
 const data = {
   label: 'node1',
@@ -86,6 +87,7 @@ const App: Component = () => {
     type: 'RGBA',
   });
   const [slider, setSlider] = createSignal(0);
+  const [rate, setRate] = createSignal<EmojiValue>();
 
   return (
     <div style={{ display: 'flex' }}>
@@ -251,6 +253,8 @@ const App: Component = () => {
         <div style={{ color: 'white' }}>{JSON.stringify(slider())}</div>
         <br />
         <br />
+        <Rate value={rate()} onChange={e => setRate(e)} />
+        <div style={{ color: 'white' }}>{JSON.stringify(rate())}</div>
       </div>
     </div>
   );

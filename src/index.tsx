@@ -8,7 +8,6 @@ import App from './App';
 //TODO
 //========== Easy
 // DatePicker https://flatpickr.js.org/examples/
-// Slider
 // Avatar
 // Rate
 // Progress/Spin

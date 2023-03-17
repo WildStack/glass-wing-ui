@@ -1,0 +1,30 @@
+@import '/src/style/variables.scss';
+
+.rate-wrapper {
+  .emoji-wrapper {
+    display: flex;
+  }
+
+  .emoji-container {
+    background-color: $component-secondary-background-color;
+    padding: 5px;
+    margin-left: 10px;
+    border-radius: $global-border-radius;
+
+    &:first-child {
+      margin-left: 0;
+    }
+
+    &:hover {
+      background-color: rgba($color: $component-secondary-background-color, $alpha: 0.7);
+    }
+
+    &:active {
+      background-color: rgba($color: $component-secondary-background-color, $alpha: 0.3);
+    }
+  }
+
+  .emoji-container-active {
+    background-color: rgba($color: $component-secondary-text-color, $alpha: 0.5);
+  }
+}
