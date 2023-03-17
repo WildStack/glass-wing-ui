@@ -11,6 +11,10 @@ body {
   overflow: overlay;
 }
 
+body.modal-open {
+  overflow: hidden;
+}
+
 * {
   font-size: 15px;
   margin: 0;

@@ -1,5 +1,5 @@
 import type { Component } from 'solid-js';
-import { createSignal } from 'solid-js';
+import { createSignal, For } from 'solid-js';
 import { AutoComplete } from './components/auto-complete';
 import { Button } from './components/button';
 import { Checkbox } from './components/checkbox';
@@ -20,6 +20,7 @@ import { Slider } from './components/slider';
 import { EmojiValue, Rate } from './components/rate';
 import { Progress } from './components/progress';
 import { Loader } from './components/loader';
+import { Modal } from './components/modal';
 
 const data = {
   label: 'node1',
@@ -259,6 +260,17 @@ const App: Component = () => {
           <Loader isLoading={true} size={110} borderWidth={30} />
           <Loader isLoading={false} />
         </div>
+        <br />
+
+        <Modal
+          onOpen={() => console.log('opened')}
+          onClose={() => console.log('closed')}
+          toggler={<Button value="Open Modal" styleClass={StyleClassEnum.Primary} />}
+        >
+          <h1>Hello</h1>
+          <h1>Hello</h1>
+          {/* <For each={Array.from(Array(100).keys())}>{(e, i) => <h1>Hello</h1>}</For> */}
+        </Modal>
       </div>
     </div>
   );
