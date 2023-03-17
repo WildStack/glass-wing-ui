@@ -15,6 +15,7 @@ import { Tree } from './components/tree';
 import { Popover } from './components/popover';
 import { Tabs } from './components/tab';
 import { Breadcrumb } from './components/breadcrumb';
+import { ColorPicker, ColorValue } from './components/color-picker';
 
 const data = {
   label: 'node1',
@@ -73,6 +74,16 @@ const App: Component = () => {
   ];
   const [radio1, setRadio1] = createSignal(radioItems1[0]);
   const [radio2, setRadio2] = createSignal(radioItems1[0]);
+  const [colorPicker, setColorPicker] = createSignal<ColorValue>({
+    hex: '#3d424b',
+    rgba: '',
+    type: 'RGBA',
+  });
+  const [colorPicker2, setColorPicker2] = createSignal<ColorValue>({
+    hex: '#3d411b',
+    rgba: '',
+    type: 'RGBA',
+  });
 
   return (
     <div style={{ display: 'flex' }}>
@@ -227,6 +238,11 @@ const App: Component = () => {
             { label: 'Sub Tab 2', link: 'aa' },
           ]}
         />
+        <br />
+        <br />
+        <br />
+        <ColorPicker styleClass={StyleClassEnum.Primary} value={colorPicker()} onChange={e => setColorPicker(e)} />
+        <ColorPicker styleClass={StyleClassEnum.Primary} value={colorPicker2()} onChange={e => setColorPicker2(e)} />
       </div>
     </div>
   );

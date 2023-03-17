@@ -1,13 +1,13 @@
 /* @refresh reload */
 import { render } from 'solid-js/web';
 
+import '@simonwep/pickr/dist/themes/nano.min.css';
 import './index.scss';
 import App from './App';
 
 //TODO
 //========== Easy
-// DatePicker
-// ColorPicker
+// DatePicker https://flatpickr.js.org/examples/
 // Slider
 // Avatar
 // Rate
@@ -19,7 +19,7 @@ import App from './App';
 // Modal
 
 // add disabled to all component (plus pointer events none)
-// autocomplete has some problems
+// autocomplete has some problems (when delted or selected something)
 // tab needs mode functionality (remove, color change)
 // add scroll in listview
 
@@ -27,3 +27,5 @@ import App from './App';
 // Smart Table
 
 render(() => <App />, document.getElementById('root') as HTMLElement);
+
+// very cool library has style like figma https://react-spectrum.adobe.com/react-spectrum/index.html

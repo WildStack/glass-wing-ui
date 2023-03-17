@@ -25,6 +25,7 @@
     "vite-plugin-solid": "^2.3.0"
   },
   "dependencies": {
+    "@simonwep/pickr": "^1.8.2",
     "solid-icons": "^1.0.1",
     "solid-js": "^1.5.1"
   }
