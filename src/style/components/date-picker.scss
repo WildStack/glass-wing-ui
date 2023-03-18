@@ -1,0 +1,15 @@
+@import '/src/style/variables.scss';
+@import 'vanillajs-datepicker/css/datepicker.css';
+
+.date-picker-wrapper {
+  input {
+    padding: 7px 24px 7px 10px;
+    position: relative;
+    user-select: none;
+    border-radius: $global-border-radius;
+    background-color: $component-secondary-background-color;
+    color: $component-secondary-text-color;
+    outline: none;
+    border: 1px solid rgba($color: $component-clicked-border-color, $alpha: 0.5);
+  }
+}

@@ -40,3 +40,68 @@
     outline: none !important;
   }
 }
+
+// Date picker
+
+.datepicker-picker {
+  border-radius: $global-border-radius;
+  background-color: $component-secondary-background-color;
+  box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.9) !important;
+
+  .dow {
+    color: $component-secondary-text-color;
+  }
+
+  .datepicker-header .datepicker-controls {
+    padding: 0;
+
+    &,
+    .button {
+      color: white;
+      border-radius: 0;
+      background-color: $component-secondary-background-color;
+
+      &:hover {
+        background-color: $component-border-color;
+      }
+    }
+  }
+
+  .datepicker-footer .datepicker-controls {
+    background-color: $component-secondary-background-color;
+
+    .today-btn {
+      user-select: none;
+      border: none !important;
+      padding: 7px 16px;
+      border-radius: $global-border-radius;
+      outline: none;
+      color: white;
+      background-color: $primary !important;
+    }
+  }
+
+  .datepicker-cell {
+    color: $component-secondary-text-color;
+
+    &:hover {
+      border-radius: $global-border-radius !important;
+      background-color: $component-border-color;
+    }
+  }
+
+  .datepicker-cell.selected,
+  .datepicker-cell.selected:hover {
+    color: white;
+    background-color: $primary;
+    border-radius: $global-border-radius !important;
+  }
+
+  .datepicker-cell.focused:not(.selected) {
+    background-color: rgba($color: $primary, $alpha: 0.2);
+    border-radius: $global-border-radius !important;
+
+    color: #fff;
+    font-weight: 600;
+  }
+}

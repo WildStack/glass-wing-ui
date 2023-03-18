@@ -14,7 +14,7 @@ export const Popover: Component<PopoverProps> = props => {
     timerId = setTimeout(() => {
       setShowLeft(e.pageX > 500);
       setStartLongPress(true);
-    }, 1500);
+    }, 500);
   };
 
   const onMouseLeave = () => {

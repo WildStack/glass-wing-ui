@@ -13,7 +13,6 @@ import App from './App';
 // Popconfirm
 // Context menu (but not wrapper other)
 // Notification
-// Modal
 
 // add disabled to all component (plus pointer events none)
 // autocomplete has some problems (when delted or selected something)

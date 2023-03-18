@@ -21,6 +21,7 @@ import { EmojiValue, Rate } from './components/rate';
 import { Progress } from './components/progress';
 import { Loader } from './components/loader';
 import { Modal } from './components/modal';
+import { DatePicker, DateValue } from './components/date-picker';
 
 const data = {
   label: 'node1',
@@ -58,6 +59,13 @@ const data = {
 const bigLoremText =
   "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.";
 
+//TODO remove (only for testing purposes)
+const tomorrow = () => {
+  const today = new Date();
+  const tomorrow = new Date(today.setDate(today.getDate() + 1));
+  return tomorrow;
+};
+
 const App: Component = () => {
   const arr = ['hello', 'wassup', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2'];
   const arr2 = ['hello', 'wassup', '2'];
@@ -91,6 +99,9 @@ const App: Component = () => {
   });
   const [slider, setSlider] = createSignal(0);
   const [rate, setRate] = createSignal<EmojiValue>();
+
+  const [date1, setDate1] = createSignal<DateValue>(new DateValue(tomorrow().toString()));
+  const [date2, setDate2] = createSignal<DateValue>(new DateValue(new Date().toString()));
 
   return (
     <div style={{ display: 'flex' }}>
@@ -271,6 +282,9 @@ const App: Component = () => {
           <h1>Hello</h1>
           {/* <For each={Array.from(Array(100).keys())}>{(e, i) => <h1>Hello</h1>}</For> */}
         </Modal>
+        <br />
+        <DatePicker value={date1()} onChange={e => setDate1(e)} styleClass={StyleClassEnum.Primary} />
+        <DatePicker value={date2()} onChange={e => setDate2(e)} styleClass={StyleClassEnum.Primary} />
       </div>
     </div>
   );
