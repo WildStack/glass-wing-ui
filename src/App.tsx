@@ -22,6 +22,7 @@ import { Progress } from './components/progress';
 import { Loader } from './components/loader';
 import { Modal } from './components/modal';
 import { DatePicker, DateValue } from './components/date-picker';
+import { Avatar } from './components/avatar';
 
 const data = {
   label: 'node1',
@@ -285,6 +286,12 @@ const App: Component = () => {
         <br />
         <DatePicker value={date1()} onChange={e => setDate1(e)} styleClass={StyleClassEnum.Primary} />
         <DatePicker value={date2()} onChange={e => setDate2(e)} styleClass={StyleClassEnum.Primary} />
+        <br />
+        <div style={{ display: 'flex' }}>
+          <Avatar />
+          <Avatar isRound={true} />
+          <Avatar size={100} onClick={() => console.log('Clicked on profile')} />
+        </div>
       </div>
     </div>
   );

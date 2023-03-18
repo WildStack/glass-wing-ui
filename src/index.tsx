@@ -6,21 +6,21 @@ import './index.scss';
 import App from './App';
 
 //TODO
-//========== Easy
-// DatePicker https://flatpickr.js.org/examples/
-// Avatar
 //===== Chalanging
-// Popconfirm
+// Popconfirm (Easy)
 // Context menu (but not wrapper other)
 // Notification
 
-// add disabled to all component (plus pointer events none)
+//===== Bugs
 // autocomplete has some problems (when delted or selected something)
 // tab needs mode functionality (remove, color change)
 // add scroll in listview
 
-// Hard
+//===== Hard
 // Smart Table
+
+//===== Lot of Work
+// add disabled to all component (plus pointer events none)
 
 render(() => <App />, document.getElementById('root') as HTMLElement);
 

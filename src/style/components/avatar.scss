@@ -1,0 +1,9 @@
+@import '/src/style/variables.scss';
+
+.avatar-wrapper {
+  .avatar {
+    width: 50px;
+    height: 50px;
+    border: 1px solid rgba($color: $component-clicked-border-color, $alpha: 0.5);
+  }
+}
