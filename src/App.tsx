@@ -23,6 +23,11 @@ import { Loader } from './components/loader';
 import { Modal } from './components/modal';
 import { DatePicker, DateValue } from './components/date-picker';
 import { Avatar } from './components/avatar';
+import { ContextMenu, ContextMenuItem } from './components/context-menu';
+
+interface ContextMenu2ItemValue {
+  arr: number[];
+}
 
 const data = {
   label: 'node1',
@@ -67,6 +72,82 @@ const tomorrow = () => {
   return tomorrow;
 };
 
+// for copying shortcuts https://code.visualstudio.com/shortcuts/keyboard-shortcuts-macos.pdf
+const contextMenuItemsTest: ContextMenuItem[] = [
+  { id: '1', label: 'asddasd', icon: <AiFillShop />, items: [{ id: '1', label: 'asddasd', icon: <AiFillShop /> }] },
+  { id: '2', label: 'asasdasdad', items: [{ id: '1', label: 'asddasd', icon: <AiFillShop /> }] },
+  { id: '1', label: 'asddasd', icon: <AiFillAlert />, items: [{ id: '1', label: 'asddasd', icon: <AiFillShop /> }] },
+  {
+    id: '1',
+    label: 'asddasd',
+    icon: <AiFillAlert />,
+    items: [{ id: '1', label: 'asddasd', icon: <AiFillShop /> }],
+  },
+];
+const contextMenuItems: ContextMenuItem<object>[] = [
+  { id: '1', label: 'asddasd', icon: <AiFillShop /> },
+  { id: '2', label: 'asasdasdad', end: '⌘K ⌘F' },
+  { id: '1', label: 'asddasd', icon: <AiFillAlert />, end: '⇧F12' },
+  {
+    id: '1',
+    label: 'asddasd',
+    icon: <AiFillAlert />,
+    items: [
+      { id: '1', label: 'asddasd', icon: <AiFillShop /> },
+      { id: '2', label: 'asasdasdad', end: '⌘K ⌘F' },
+      { id: '1', label: 'asddasd', icon: <AiFillAlert />, end: '⇧F12', value: { x: 1, arr: [1, 2, 3] } },
+    ],
+  },
+];
+const contextMenuItems2: ContextMenuItem<ContextMenu2ItemValue>[] = [
+  { id: '1', label: 'asddasd', icon: <AiFillShop /> },
+  { id: '2', label: 'asasdasdad', end: '⌘K ⌘F' },
+  { id: '1', label: 'asddasd', icon: <AiFillAlert />, end: '⇧F12' },
+  {
+    id: '1',
+    label: 'asddasd - 1',
+    icon: <AiFillAlert />,
+    items: [
+      { id: '1', label: 'asddasd - 1 - 1', icon: <AiFillShop /> },
+      { id: '2', label: 'asasdasdad - 1 - 2', end: '⌘K ⌘F' },
+      { id: '1', label: 'asddasd - 1 - 3', icon: <AiFillAlert />, end: '⇧F12' },
+    ],
+  },
+  {
+    id: '1',
+    label: 'asddasd - 2',
+    icon: <AiFillAlert />,
+    items: [
+      { id: '1', label: 'asddasd - 2 - 1', icon: <AiFillShop /> },
+      { id: '2', label: 'asasdasdad - 2 - 2', end: '⌘K ⌘F' },
+      {
+        id: '1',
+        label: 'asddasd - 2 - 3',
+        icon: <AiFillAlert />,
+        end: '⇧F12',
+        items: [
+          { id: '1', label: 'asddasd - 2 - 3 - 1', icon: <AiFillShop /> },
+          { id: '2', label: 'asasdasdad - 2 - 3 - 2', end: '⌘K ⌘F' },
+          {
+            id: '1',
+            label: 'asddasd - 2 - 3 - 3',
+            icon: <AiFillAlert />,
+            end: '⇧F12',
+            value: { arr: [1, 2, 3] },
+            items: [
+              {
+                id: '1',
+                label: 'asddasd - 2 - 3 - 3 - 1',
+                icon: <AiFillShop />,
+              },
+            ],
+          },
+        ],
+      },
+    ],
+  },
+];
+
 const App: Component = () => {
   const arr = ['hello', 'wassup', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2', '2'];
   const arr2 = ['hello', 'wassup', '2'];
@@ -105,7 +186,7 @@ const App: Component = () => {
   const [date2, setDate2] = createSignal<DateValue>(new DateValue(new Date().toString()));
 
   return (
-    <div style={{ display: 'flex' }}>
+    <div style={{ display: 'flex', margin: '50px' }}>
       <div style={{ width: '250px' }}>
         <Button value="Ok" styleClass={StyleClassEnum.Primary} />
         <br />
@@ -175,6 +256,35 @@ const App: Component = () => {
         <Input styleClass={StyleClassEnum.Secondary} endButtonText="Search" />
       </div>
       <div style={{ 'margin-left': '30px', width: '250px' }}>
+        <br />
+        <ContextMenu
+          items={contextMenuItemsTest}
+          styleClass={StyleClassEnum.Secondary}
+          onClick={item => {
+            console.log(item);
+          }}
+        >
+          <Button value="Context menu test" styleClass={StyleClassEnum.Primary} />
+        </ContextMenu>
+        <ContextMenu
+          items={contextMenuItems}
+          styleClass={StyleClassEnum.Secondary}
+          onClick={item => {
+            console.log(item);
+          }}
+        >
+          <Button value="Context menu" styleClass={StyleClassEnum.Primary} />
+        </ContextMenu>
+        <ContextMenu
+          items={contextMenuItems2}
+          styleClass={StyleClassEnum.Secondary}
+          onClick={item => {
+            console.log(item);
+          }}
+        >
+          <Button value="Context menu 2" styleClass={StyleClassEnum.Primary} />
+        </ContextMenu>
+        <br />
         <AutoComplete
           value={autoCompleteValue()}
           items={arr3}
@@ -204,7 +314,7 @@ const App: Component = () => {
       <div style={{ 'margin-left': '30px', width: '300px' }}>
         <TextArea styleClass={StyleClassEnum.Primary} row={8} />
         <br />
-        <TextArea styleClass={StyleClassEnum.Secondary} row={5} value="Hello this is text" />
+        <TextArea styleClass={StyleClassEnum.Secondary} row={5} value={`dasdasd\nasda\nsd\n\ndas\n\na\nas\nd\nsa\n`} />
         <br />
         <Tree data={data} styleClass={StyleClassEnum.Primary} />
         <br />
@@ -218,6 +328,18 @@ const App: Component = () => {
         <Popover text={bigLoremText}>
           <Button value="Popover big text example" styleClass={StyleClassEnum.Primary} />
         </Popover>
+
+        <div style={{ display: 'flex', 'justify-content': 'flex-end', 'margin-top': '20px' }}>
+          <ContextMenu
+            items={contextMenuItems2}
+            styleClass={StyleClassEnum.Secondary}
+            onClick={item => {
+              console.log(item);
+            }}
+          >
+            <Button value="Context menu 2" styleClass={StyleClassEnum.Primary} />
+          </ContextMenu>
+        </div>
         <br />
         <Tabs
           styleClass={StyleClassEnum.Primary}
@@ -292,6 +414,15 @@ const App: Component = () => {
           <Avatar isRound={true} />
           <Avatar size={100} onClick={() => console.log('Clicked on profile')} />
         </div>
+        <ContextMenu
+          items={contextMenuItems2}
+          styleClass={StyleClassEnum.Secondary}
+          onClick={item => {
+            console.log(item);
+          }}
+        >
+          <Button value="Context menu 2" styleClass={StyleClassEnum.Primary} />
+        </ContextMenu>
       </div>
     </div>
   );

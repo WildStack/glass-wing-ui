@@ -7,15 +7,15 @@
     padding: 7px 10px;
     position: relative;
     user-select: none;
-    border-radius: $global-border-radius;
     background-color: $component-secondary-background-color;
     color: $component-secondary-text-color;
+    border-radius: $global-border-radius;
   }
 
   .dropdown-container {
     display: none;
     position: absolute;
-    top: 100%;
+    top: 105%;
     left: 0;
     margin-top: 4px;
     background-color: $component-secondary-background-color;

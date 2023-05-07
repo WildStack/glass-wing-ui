@@ -1,13 +1,13 @@
 @import './style/variables.scss';
 @import './style/index.scss';
 
+@import url('https://fonts.cdnfonts.com/css/jetbrains-mono');
+
 body {
   margin: 0;
-  font-family: sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: $secondary-dim;
-  margin: 100px;
   overflow: overlay;
 }
 
@@ -15,12 +15,19 @@ body.modal-open {
   overflow: hidden;
 }
 
+// body.noscroll {
+//   position: fixed;
+//   overflow-y: scroll;
+//   width: 100%;
+// }
+
 * {
   font-size: 15px;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: sans-serif;
+  // font-family: sans-serif;
+  font-family: 'JetBrains Mono', sans-serif;
 }
 
 .visible {

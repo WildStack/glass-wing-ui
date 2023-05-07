@@ -2,11 +2,14 @@ $primary: #568af2;
 $secondary: #282c35;
 $secondary-dark: #21252c;
 
-$secondary-dim: #21252b;
+$secondary-dim: #1e1f22;
 
+// $global-border-radius: 3px;
+// $global-scrollbar-border-radius: 50px;
 $global-border-radius: 1px;
+$global-scrollbar-border-radius: 1px;
 
-// ============= Component Colors
+// ============= Component# Colors
 
 $component-border-color: #464c55;
 $component-clicked-border-color: #838d9c;
@@ -15,6 +18,28 @@ $component-primary-background-color: $primary;
 $component-primary-text-color: white;
 
 $component-secondary-text-color: #abb2bf;
-$component-secondary-background-color: #3d424b;
+$component-secondary-background-color: #333841;
+// $component-secondary-background-color: #2b2d30;
 
 $component-overlays-background: #25272c;
+
+// $primary: #568af2;
+// $secondary: #282c35;
+// $secondary-dark: #21252c;
+
+// $secondary-dim: #21252b;
+
+// $global-border-radius: 1px;
+
+// // ============= Component Colors
+
+// $component-border-color: #464c55;
+// $component-clicked-border-color: #838d9c;
+
+// $component-primary-background-color: $primary;
+// $component-primary-text-color: white;
+
+// $component-secondary-text-color: #abb2bf;
+// $component-secondary-background-color: #3d424b;
+
+// $component-overlays-background: #25272c;

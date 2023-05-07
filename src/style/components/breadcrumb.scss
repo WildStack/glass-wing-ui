@@ -20,7 +20,7 @@
     }
 
     .breadcrumb-separator {
-      color: $component-primary-text-color;
+      color: $component-secondary-text-color; // $component-primary-text-color
       padding: 0 9px;
       font-weight: bold;
     }

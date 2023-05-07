@@ -1,4 +1,4 @@
-import { createSignal, createEffect, JSX } from 'solid-js';
+import { createSignal, createEffect, JSX, Show } from 'solid-js';
 import { StyleClassEnum } from '../data/style-class.enum';
 
 interface ModalProps {
@@ -38,9 +38,11 @@ export const Modal = (props: ModalProps) => {
 
   return (
     <div class="modal-wrapper">
-      <div onClick={openModal}>{props.toggler}</div>
+      <div class="modal-toggler" onClick={openModal}>
+        {props.toggler}
+      </div>
 
-      {isOpen() && (
+      <Show when={isOpen()}>
         <div class="modal-background" onClick={handleModalClick}>
           <div class="modal">
             <div class="modal-top-container">
@@ -53,7 +55,7 @@ export const Modal = (props: ModalProps) => {
             <div class="modal-content">{props.children}</div>
           </div>
         </div>
-      )}
+      </Show>
     </div>
   );
 };

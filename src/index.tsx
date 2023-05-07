@@ -22,6 +22,9 @@ import App from './App';
 //===== Lot of Work
 // add disabled to all component (plus pointer events none)
 
+//TODO make this into config
+window.addEventListener('contextmenu', e => e.preventDefault());
+
 render(() => <App />, document.getElementById('root') as HTMLElement);
 
 // very cool library has style like figma https://react-spectrum.adobe.com/react-spectrum/index.html
