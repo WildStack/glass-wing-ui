@@ -22,6 +22,8 @@ import App from './App';
 //===== Lot of Work
 // add disabled to all component (plus pointer events none)
 
+//TODO radio and checkbox is weird when active
+
 //TODO make this into config
 window.addEventListener('contextmenu', e => e.preventDefault());
 
